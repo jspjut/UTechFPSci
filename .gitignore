@@ -1,4 +1,5 @@
 # Ignore the downloaded FPSci version and the results being run
 /FPSci/*
 /FPSci.*.zip
-/model/hideseek
+/model/hideseek/*.png
+
