@@ -14,16 +14,17 @@ del FPSci.%FPSCI_VERSION%.zip
 echo Making sure gdown is installed
 pip install gdown
 echo Downloading HideSeek Model
-gdown https://drive.google.com/%HIDESEEK_FOLDER_ID% -O model/hideseek --folder
+mkdir model
+gdown https://drive.google.com/drive/folders/%HIDESEEK_FOLDER_ID% -O model/hideseek --folder
 
 @REM Copy configs over
 echo Copying configs over
 xcopy configs\*.Any FPSci\ /Y
 
-@REM Copy model over
+@REM Copy model folder over
 echo Copying models over
-xcopy model\* FPSci\models\ /Y
+xcopy model\hideseek\* FPSci\model\hideseek\ /Y
 
 @REM Copy scene over
-echo Copying scenes over
-xcopy scenes\*Scene.Any FPSci\scenes\  /Y
+echo Copying scene over
+xcopy scene\*Scene.Any FPSci\scene\  /Y
