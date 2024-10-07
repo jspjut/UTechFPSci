@@ -20,6 +20,6 @@ map_Kd ceiling_diffuse.png
 
 newmtl Pillar
 Ka 0.2 0.2 0.2
-Kd 0.6 0.3 0.1
+Kd 0.6 0.6 0.6
 Ks 0.2 0.2 0.2
 map_Kd wood_diffuse.png
