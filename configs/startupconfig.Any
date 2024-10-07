@@ -1,7 +1,7 @@
 { 
     audioEnable = true;         // Set to true for release
-    developerMode = false;       // Set to false for release
-    fullscreen = true;         // Set to true for release
+    developerMode = true;       // Set to false for release
+    fullscreen = false;         // Set to true for release
     waypointEditorMode = false; // Set to false for release
 
     // The below lines will need to change format for FPSci v21 releases

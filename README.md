@@ -2,6 +2,10 @@
 
 This is a simple first person science experiment using [FPSci](https://github.com/NVLabs/FPSci).
 
+## Prerequisite
+
+This project expects you to have a version of Python installed already. It will look for `pip` in your path to make sure `gdown` is installed to grab the required data files (see below).
+
 ## How to run
 
 1. Double click `setup.bat`, which will download the required version of FPSci, and copy the experiment configuration files into the right location.
@@ -12,6 +16,9 @@ This is a simple first person science experiment using [FPSci](https://github.co
 6. (optional) If something goes wrong and you need to start over, you can delete the `FPSci` directory, and return to step 1 above.
 7. (optional) If you're comparing 2 or more screens, you'll want to repeat steps 2-5 creating another new user for each screen you use. It may be helpful to note the mouse sensitivity you used the first time to keep that the same on different screens.
 
+## Hide and Seek scene
+
+This experiment uses a custom hide and seek scene. The `.Scene.Any` file is provided with this repository, but the data files for the scene geometry and textures are in a [google drive folder](https://drive.google.com/drive/folders/1hryO2ewrrQhKmApf-CizbCejUztCxEv9). The setup script should take care of downloading and installing this for you.
 
 ## More about mouse sensitivity
 
