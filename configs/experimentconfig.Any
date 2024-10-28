@@ -19,9 +19,6 @@
     scene = {
         name = "UTech Hide Seek";
     };
-    moveRate = 5.0;
-    jumpVelocity = 2.5;
-    playerGravity = Vector3(0.0, -9.81, 0.0);
 
     sessions = (
 
@@ -31,12 +28,18 @@
             frameRate = 60;
             maxTrialDuration = 30;
             id = "oneHitCluster";
+
+            // Showing timer and progress
+            showHUD = True;
+            showBanner = True;
+            bannerTimerMode = "remaining";
+            showPreviewTargetsWithReference = True;
+
             blockCount = 5;
-            
             trials = ( 
                 { 
-                    count = 15; 
-                    ids = ( "static1", "static1", "static1", "static1", "static2", "static2", "static2", "static2", "static3", "static3", "static3", "static3", "static4", "static4", "static4", "static4" ); 
+                    // count = 15; 
+                    ids = ( "staticFrontWall", "staticFrontWall", "staticFrontWall", "staticFrontWall", "staticFrontWall", "staticFrontWall", "staticFrontWall", "staticFrontWall" ); 
                 },
             ); 
         },
@@ -78,8 +81,20 @@
             // Fun session -- wander and find targets around the map
             description = "findTargets trials";
             frameRate = 60; 
-            maxTrialDuration = 180;
+            maxTrialDuration = 60;
             id = "findTargets";
+            
+            // allow movement in this one
+            moveRate = 5.0;
+            jumpVelocity = 2.5;
+            playerGravity = Vector3(0.0, -9.81, 0.0);
+            
+            // Showing timer and progress
+            showHUD = True;
+            showBanner = True;
+            bannerTimerMode = "remaining";
+
+            // There are blockCount blocks of count trials each
             blockCount = 4;
             tasks = (
                 {
@@ -100,7 +115,7 @@
             trials = (
                 {
                     id = "8 targets";
-                    targetIds = ("respawn", "respawn", "respawn", "respawn", "respawn", "respawn", "respawn", "respawn" );
+                    targetIds = ("respawn", "respawn", "respawn", "respawn", "respawn_move", "respawn_move", "respawn_move", "respawn_move" );
                 },
             );
         }
@@ -108,6 +123,22 @@
     ); 
 
     targets = ( 
+        {
+            id: "staticFrontWall",
+            destSpace = "world";
+            visualSize = [ 0.275, 0.275 ];
+            speed: [ 0, 0 ],
+            spawnBounds = AABox {
+                Point3(19.0, 1.0, 6.0),
+                Point3(19.0, 3.0, 14.0),
+            };
+            moveBounds = AABox {
+                Point3(19.0, 1.0, 1.0),
+                Point3(19.0, 3.0, 19.0),
+            };
+            jumpEnabled: false,
+            respawnCount = -1;
+        },
         {
             id: "static1",
             destSpace = "world";
@@ -175,11 +206,27 @@
             speed: [ 0, 0 ],
             spawnBounds = AABox {
                 Point3(1.0, 1.0, 1.0),
-                Point3(1.0, 3.0, 19.0),
+                Point3(19.0, 3.0, 19.0),
             };
             moveBounds = AABox {
                 Point3(1.0, 1.0, 1.0),
-                Point3(1.0, 3.0, 19.0),
+                Point3(19.0, 3.0, 19.0),
+            };
+            jumpEnabled: false,
+            respawnCount = -1;
+        },
+        {
+            id: "respawn_move",
+            destSpace = "world";
+            visualSize = [ 0.275, 0.275 ];
+            speed: [ 3, 3 ],
+            spawnBounds = AABox {
+                Point3(1.0, 1.0, 1.0),
+                Point3(19.0, 3.0, 19.0),
+            };
+            moveBounds = AABox {
+                Point3(1.0, 1.0, 1.0),
+                Point3(19.0, 3.0, 19.0),
             };
             jumpEnabled: false,
             respawnCount = -1;
