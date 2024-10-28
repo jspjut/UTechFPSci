@@ -7,7 +7,7 @@
         { 
             completedSessions = ( ); 
             id = "anon"; 
-            sessions = ("oneHitCluster", "findTargets");
+            sessions = ("gonogo", "oneHitCluster", "findTargets");
         } 
     ); 
 }  

@@ -41,6 +41,40 @@
             ); 
         },
         {
+            // X targets 1 wall - for warm up and testing
+            description = "go nogo trials";
+            frameRate = 60;
+            id = "gonogo";
+            showReferenceTarget = False;
+            referenceTargetSize = 1;
+            // These don't seem to work
+            // showPreviewTargetsWithReference = True;
+            // previewTargetColor = Color3(.4, .4, .8);
+
+            // pretrial duration is a randomized truncated exponential distribution
+            pretrialDuration = 0.5;
+            pretrialDurationRange = [0.2, 1.5];
+            maxTrialDuration = 3;
+            // skip task and trial feedback for now
+            trialFeedbackDuration = 0;
+            taskFeedbackDuration = 0;
+
+            // zoom in and disable movement
+            horizontalFieldOfView = .05;
+            turnScale = Vector2(0, 0);
+            moveRate = 0.0;
+            jumpVelocity = 0.0;
+            
+            // There are blockCount blocks of count trials each
+            blockCount = 5;
+            trials = ( 
+                { 
+                    count = 15; 
+                    ids = ( "gonogo" ); 
+                },
+            ); 
+        },
+        {
             // Fun session -- wander and find targets around the map
             description = "findTargets trials";
             frameRate = 60; 
@@ -151,6 +185,7 @@
             respawnCount = -1;
         },
         {
+            // This one is the small size
             id: "static_small",
             destSpace = "world";
             visualSize = [ 0.075, 0.075 ];
@@ -162,6 +197,22 @@
             moveBounds = AABox {
                 Point3(1.0, 1.0, 1.0),
                 Point3(1.0, 4.0, 19.0),
+            };
+            jumpEnabled: false,
+        },
+        {
+            // Large target, but we zoom in the camera on it anyway
+            id: "gonogo",
+            destSpace = "world";
+            visualSize = [ 2, 2 ];
+            speed: [ 0, 0 ],
+            spawnBounds = AABox {
+                Point3(19.0, 2.0, 10.0),
+                Point3(19.0, 2.0, 10.0),
+            };
+            moveBounds = AABox {
+                Point3(19.0, 2.0, 10.0),
+                Point3(19.0, 2.0, 10.0),
             };
             jumpEnabled: false,
         },
