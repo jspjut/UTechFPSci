@@ -7,7 +7,17 @@
         { 
             completedSessions = ( ); 
             id = "anon"; 
-            sessions = ("gonogo", "oneHitCluster", "findTargets");
-        } 
+            sessions = ("oneHitGoNoGo", "reaction", "oneHitCluster", "findTargets");
+        }, 
+        { 
+            completedSessions = ( ); 
+            id = "exampleDay1"; 
+            sessions = ("oneHitGoNoGo", "reaction", "oneHitCluster", "findTargets");
+        }, 
+        { 
+            completedSessions = ( ); 
+            id = "exampleDay1"; 
+            sessions = ("oneHitGoNoGo", "reaction", "oneHitCluster", "findTargets");
+        }, 
     ); 
 }  
