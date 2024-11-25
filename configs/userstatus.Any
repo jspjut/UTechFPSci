@@ -3,6 +3,7 @@
     currentUser = "anon"; 
     sessions = ( ); 
     settingsVersion = 1; 
+    allowRepeat = True;
     users = ( 
         { 
             completedSessions = ( ); 
@@ -12,12 +13,12 @@
         { 
             completedSessions = ( ); 
             id = "exampleDay1"; 
-            sessions = ("oneHitGoNoGo", "reaction", "oneHitCluster", "findTargets");
+            sessions = ("oneHitGoNoGo", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "oneHitGoNoGo");
         }, 
         { 
             completedSessions = ( ); 
             id = "exampleDay1"; 
-            sessions = ("oneHitGoNoGo", "reaction", "oneHitCluster", "findTargets");
+            sessions = ("oneHitGoNoGo", "findTargets");
         }, 
     ); 
 }  

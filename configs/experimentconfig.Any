@@ -151,7 +151,7 @@
             bannerTimerMode = "remaining";
 
             // There are blockCount blocks of count trials each
-            blockCount = 4;
+            // blockCount = 4;
             tasks = (
                 {
                     id = "wander";
