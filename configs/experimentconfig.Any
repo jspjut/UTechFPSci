@@ -44,23 +44,24 @@
             ); 
         },
         {
-            // X targets 1 wall - for warm up and testing
-            description = "oneHitGoNoGo trials";
+            // X targets 1 wall - for warm up
+            description = "warm up trials for oneHitGoNoGo trials";
             frameRate = 60;
-            maxTrialDuration = 1.5;
-            trialFeedbackDuration = 0.5;
-            id = "oneHitGoNoGo";
-            referenceTargetInitialFeedback = "Click on the target, only if it is green. Avoid clicking on red targets!\nClick the blue target to start.";
+            maxTrialDuration = 0.29;
+            trialFeedbackDuration = 0.4;
+            taskFeedbackDuration = 0.0;
+            id = "warmUpOneHitGoNoGo";
+            referenceTargetInitialFeedback = "Warm up trials\nClick on the target, only if it is green. Avoid clicking on red targets!\nClick the blue target to start.";
             referenceTargetColor = Color3(0,0,1);
 
 
             // Showing timer and progress
-            showHUD = True;
-            showBanner = True;
+            showHUD = False;
+            showBanner = False;
             bannerTimerMode = "remaining";
-            showPreviewTargetsWithReference = True;
+            showPreviewTargetsWithReference = False;
 
-            blockCount = 5;
+            blockCount = 2;
             randomizeTaskOrder = True;
             tasks = (
                 {
@@ -75,6 +76,63 @@
                 {
                     id = "nogo";
                     count = 3; 
+                    trialOrders = [
+                        {
+                            order = ["nogo"];
+                        },
+                    ];
+                },
+            );
+            trials = ( 
+                { 
+                    id = "go";
+                    targetIds = ( "staticFrontWallGo" ); 
+                    // trialSuccessFeedback: "%trialTaskTimeMs ms!",
+                    trialSuccessFeedback: "Success!",
+                    trialFailureFeedback: "Failure!",
+                },
+                { 
+                    id = "nogo";
+                    targetIds = ( "staticFrontWallNoGo" ); 
+                    trialSuccessFeedback: "Failure!",
+                    trialFailureFeedback: "Success!",
+                },
+
+            ); 
+        },
+        {
+            // X targets 1 wall - for testing
+            description = "Experiment trials for oneHitGoNoGo trials";
+            frameRate = 60;
+            maxTrialDuration = 0.29;
+            trialFeedbackDuration = 0.4;
+            taskFeedbackDuration = 0.0;
+            id = "oneHitGoNoGo";
+            referenceTargetInitialFeedback = "Click on the target, only if it is green. Avoid clicking on red targets!\nClick the blue target to start.";
+            referenceTargetColor = Color3(0,0,1);
+
+
+            // Showing timer and progress
+            showHUD = False;
+            showBanner = False;
+            bannerTimerMode = "remaining";
+            showPreviewTargetsWithReference = False;
+
+            blockCount = 5;
+            randomizeTaskOrder = True;
+            tasks = (
+                {
+                    id = "go";
+                    count = 28; 
+                    trialOrders = [
+                        {
+                            order = ["go"];
+                        },
+                    ];
+                },
+                {
+                    id = "nogo";
+                    count = 12; 
                     trialOrders = [
                         {
                             order = ["nogo"];
@@ -134,10 +192,58 @@
             ); 
         },
         {
+            // Warm up for fun session -- wander and find targets around the map
+            description = "findTargets trials";
+            frameRate = 60; 
+            maxTrialDuration = 60;
+            trialFeedbackDuration = 0.8;
+            id = "warmUpFindTargets";
+            referenceTargetInitialFeedback = "Destroy as many possible targets as you can in 1 minute!\nClick the blue target to start.";
+            referenceTargetColor = Color3(0,0,1);
+            
+            // allow movement in this one
+            moveRate = 5.0;
+            jumpVelocity = 2.5;
+            playerGravity = Vector3(0.0, -9.81, 0.0);
+            
+            // Showing timer and progress
+            showHUD = True;
+            showBanner = True;
+            bannerTimerMode = "remaining";
+
+            // There are blockCount blocks of count trials each
+            // blockCount = 4;
+            tasks = (
+                {
+                    id = "wander";
+                    trialOrders = [
+                        {
+                            order = ["8 targets"];
+                        },
+                    ];
+                    questions = [ {
+                        prompt = "How well did you think you did this round? (1 = bad, 5 = good)";
+                        type = "Rating";
+                        randomOrder = false;
+                        options = ["1", "2", "3", "4", "5"];
+                    } ];
+                },
+            );
+            trials = (
+                {
+                    id = "8 targets";
+                    targetIds = ("respawn_4", "respawn_4", "respawn_4", "respawn_4", "respawn_move_inf", "respawn_move_2", "respawn_move", "respawn_move" );
+                    trialSuccessFeedback: "End of block.",
+                    trialFailureFeedback: "End of block.",
+                },
+            );
+        },
+        {
             // Fun session -- wander and find targets around the map
             description = "findTargets trials";
             frameRate = 60; 
-            maxTrialDuration = 120;
+            maxTrialDuration = 60;
+            trialFeedbackDuration = 0.8;
             id = "findTargets";
             
             // allow movement in this one
@@ -171,10 +277,86 @@
             trials = (
                 {
                     id = "8 targets";
-                    targetIds = ("respawn", "respawn", "respawn", "respawn", "respawn_move", "respawn_move", "respawn_move", "respawn_move" );
+                    targetIds = ("respawn_4", "respawn_4", "respawn_4", "respawn_4", "respawn_move_inf", "respawn_move_2", "respawn_move", "respawn_move" );
+                    trialSuccessFeedback: "End of block.",
+                    trialFailureFeedback: "End of block.",
                 },
             );
-        }
+        },
+        {
+            // Short Break -- break time
+            description = "break for session during stimulation phase or shame phase";
+            frameRate = 60; 
+            maxTrialDuration = 60;
+            trialFeedbackDuration = 0.8;
+            taskFeedbackDuration = 1.0;
+            id = "break";
+            referenceTargetInitialFeedback = "Please take a 1-minute break\nPlease click the blue target to start the break.";
+            referenceTargetColor = Color3(0,0,1);
+
+            // Showing timer and progress
+            showHUD = True;
+            showBanner = True;
+            bannerTimerMode = "remaining";
+
+            // There are blockCount blocks of count trials each
+            // blockCount = 4;
+            tasks = (
+                {
+                    id = "breakStim";
+                    trialOrders = [
+                        {
+                            order = ["break"];
+                        },
+                    ];
+                },
+            );
+            trials = (
+                {
+                    id = "break";
+                    targetIds = ("break_target");
+                    trialSuccessFeedback: "End of break. Click to begin next block of trials.",
+                    trialFailureFeedback: "End of break. Click to begin next block of trials.",
+                },
+            );
+        },
+        {
+            // Longer Break -- break time
+            description = "break for session during before and after stimulation phase or shame phase";
+            frameRate = 60; 
+            maxTrialDuration = 90;
+            trialFeedbackDuration = 0.8;
+            taskFeedbackDuration = 1.0;
+            id = "blockBreak";
+            referenceTargetInitialFeedback = "Please take a 1 and a half minute break before starting the next phase of the experiment.\nPlease click the blue target to start the break.";
+            referenceTargetColor = Color3(0,0,1);
+
+            // Showing timer and progress
+            showHUD = True;
+            showBanner = True;
+            bannerTimerMode = "remaining";
+
+            // There are blockCount blocks of count trials each
+            // blockCount = 4;
+            tasks = (
+                {
+                    id = "longBreakStim";
+                    trialOrders = [
+                        {
+                            order = ["longBreak"];
+                        },
+                    ];
+                },
+            );
+            trials = (
+                {
+                    id = "longBreak";
+                    targetIds = ("break_target");
+                    trialSuccessFeedback: "End of break. Click to begin next block of trials.",
+                    trialFailureFeedback: "End of break. Click to begin next block of trials.",
+                },
+            );
+        },
     
     ); 
 
@@ -196,19 +378,19 @@
             jumpEnabled: false,
             respawnCount = -1;
         },
-        {
+{
             id: "staticFrontWallGo",
             destSpace = "world";
-            visualSize = [ 0.275, 0.275 ];
+            visualSize = [ 0.5, 0.5 ];
             colors = [Color3(0,1,0), Color3(0,1,0)];
             speed: [ 0, 0 ],
             spawnBounds = AABox {
-                Point3(19.0, 1.0, 6.0),
-                Point3(19.0, 3.0, 14.0),
+                Point3(19.0, 1.5, 10.0),
+                Point3(19.0, 1.5, 10.0),
             };
             moveBounds = AABox {
-                Point3(19.0, 1.0, 1.0),
-                Point3(19.0, 3.0, 19.0),
+                Point3(19.0, 1.5, 10.0),
+                Point3(19.0, 1.5, 10.0),
             };
             jumpEnabled: false,
             destroyedSound = ""
@@ -216,16 +398,16 @@
         {
             id: "staticFrontWallNoGo",
             destSpace = "world";
-            visualSize = [ 0.275, 0.275 ];
+            visualSize = [ 0.5, 0.5 ];
             colors = [Color3(1,0,0), Color3(1,0,0)];
             speed: [ 0, 0 ],
             spawnBounds = AABox {
-                Point3(19.0, 1.0, 6.0),
-                Point3(19.0, 3.0, 14.0),
+                Point3(19.0, 1.5, 10.0),
+                Point3(19.0, 1.5, 10.0),
             };
             moveBounds = AABox {
-                Point3(19.0, 1.0, 1.0),
-                Point3(19.0, 3.0, 19.0),
+                Point3(19.0, 1.5, 10.0),
+                Point3(19.0, 1.5, 10.0),
             };
             jumpEnabled: false,
             hitSound = "fpsci_miss_100ms.wav",
@@ -292,7 +474,23 @@
             jumpEnabled: false,
         },
         {
-            id: "respawn",
+            id: "break_target",
+            destSpace = "world";
+            visualSize = [ 0.275, 0.275 ];
+            speed: [ 0, 0 ],
+            spawnBounds = AABox {
+                Point3(1.0, 31.0, 1.0),
+                Point3(19.0, 33.0, 19.0),
+            };
+            moveBounds = AABox {
+                Point3(1.0, 31.0, 1.0),
+                Point3(19.0, 33.0, 19.0),
+            };
+            jumpEnabled: false,
+            respawnCount = 4;
+        },
+        {
+            id: "respawn_4",
             destSpace = "world";
             visualSize = [ 0.275, 0.275 ];
             speed: [ 0, 0 ],
@@ -305,7 +503,39 @@
                 Point3(19.0, 3.0, 19.0),
             };
             jumpEnabled: false,
+            respawnCount = 4;
+        },
+        {
+            id: "respawn_move_inf",
+            destSpace = "world";
+            visualSize = [ 0.275, 0.275 ];
+            speed: [ 2, 2 ],
+            spawnBounds = AABox {
+                Point3(1.0, 1.0, 1.0),
+                Point3(19.0, 3.0, 19.0),
+            };
+            moveBounds = AABox {
+                Point3(1.0, 1.0, 1.0),
+                Point3(19.0, 3.0, 19.0),
+            };
+            jumpEnabled: false,
             respawnCount = -1;
+        },
+        {
+            id: "respawn_move_2",
+            destSpace = "world";
+            visualSize = [ 0.275, 0.275 ];
+            speed: [ 2, 2 ],
+            spawnBounds = AABox {
+                Point3(1.0, 1.0, 1.0),
+                Point3(19.0, 3.0, 19.0),
+            };
+            moveBounds = AABox {
+                Point3(1.0, 1.0, 1.0),
+                Point3(19.0, 3.0, 19.0),
+            };
+            jumpEnabled: false,
+            respawnCount = 2;
         },
         {
             id: "respawn_move",
@@ -321,7 +551,7 @@
                 Point3(19.0, 3.0, 19.0),
             };
             jumpEnabled: false,
-            respawnCount = -1;
+            respawnCount = 1;
         },
         {
             // This one is the small size

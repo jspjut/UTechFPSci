@@ -1,24 +1,28 @@
-// File generated on 11/12/2021 at 13:11:02
 { 
-    currentUser = "anon"; 
-    sessions = ( ); 
-    settingsVersion = 1; 
-    allowRepeat = True;
-    users = ( 
+    "allowRepeat": true, 
+    "currentUser": "Day1", 
+    "sessions": [ ], 
+    "settingsVersion": 1, 
+    "users": [ 
         { 
-            completedSessions = ( ); 
-            id = "anon"; 
-            sessions = ("oneHitGoNoGo", "reaction", "oneHitCluster", "findTargets");
+            "id": "anon", 
+            "sessions": [ "warmUpOneHitGoNoGo", "oneHitGoNoGo", "reaction", "oneHitCluster", "findTargets", "break", "blockBreak"]
         }, 
         { 
-            completedSessions = ( ); 
-            id = "exampleDay1"; 
-            sessions = ("oneHitGoNoGo", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "oneHitGoNoGo");
+            "id": "Day1", 
+            "sessions": [ "warmUpOneHitGoNoGo", "oneHitGoNoGo", "warmUpFindTargets", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "oneHitGoNoGo"]
         }, 
         { 
-            completedSessions = ( ); 
-            id = "exampleDay1"; 
-            sessions = ("oneHitGoNoGo", "findTargets");
+            "id": "exampleDay1", 
+            "sessions": [ "oneHitGoNoGo", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "oneHitGoNoGo"]
         }, 
-    ); 
-}  
+        { 
+            "id": "exampleDay1", 
+            "sessions": [ "oneHitGoNoGo", "findTargets"]
+        }, 
+        { 
+            "id": "a", 
+            "sessions": [ "oneHitGoNoGo", "findTargets"]
+        } ]
+    
+} 
