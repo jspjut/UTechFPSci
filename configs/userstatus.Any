@@ -10,7 +10,7 @@
         }, 
         { 
             "id": "Day1", 
-            "sessions": [ "warmUpOneHitGoNoGo", "oneHitGoNoGo", "warmUpFindTargets", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "oneHitGoNoGo"]
+            "sessions": [ "oneHitGoNoGo", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "oneHitGoNoGo"]
         }, 
         { 
             "id": "exampleDay1", 
@@ -18,10 +18,6 @@
         }, 
         { 
             "id": "exampleDay1", 
-            "sessions": [ "oneHitGoNoGo", "findTargets"]
-        }, 
-        { 
-            "id": "a", 
             "sessions": [ "oneHitGoNoGo", "findTargets"]
         } ]
     

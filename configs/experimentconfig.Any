@@ -1,6 +1,7 @@
 { 
     description = "Utah Tech FPS Experiment 1"; 
     allowUserAdd = True;
+    showMenuBetweenSessions: False,
     pretrialDuration = 0;
     referenceTargetSize = 0.05;
     
@@ -104,9 +105,10 @@
             // X targets 1 wall - for testing
             description = "Experiment trials for oneHitGoNoGo trials";
             frameRate = 60;
-            maxTrialDuration = 0.29;
+            maxTrialDuration = 0.39;
             trialFeedbackDuration = 0.4;
             taskFeedbackDuration = 0.0;
+            clickToStart = False;
             id = "oneHitGoNoGo";
             referenceTargetInitialFeedback = "Click on the target, only if it is green. Avoid clicking on red targets!\nClick the blue target to start.";
             referenceTargetColor = Color3(0,0,1);
@@ -245,6 +247,9 @@
             maxTrialDuration = 60;
             trialFeedbackDuration = 0.8;
             id = "findTargets";
+            // clickToStart = False;
+            referenceTargetInitialFeedback = "Destroy as many possible targets as you can in 1 minute!\nClick the blue target to start.";
+            referenceTargetColor = Color3(0,0,1);
             
             // allow movement in this one
             moveRate = 5.0;
@@ -255,6 +260,8 @@
             showHUD = True;
             showBanner = True;
             bannerTimerMode = "remaining";
+            bannerShowScore = True;
+            scoreModel = "targets destroyed";
 
             // There are blockCount blocks of count trials each
             // blockCount = 4;
