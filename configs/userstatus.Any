@@ -1,7 +1,7 @@
 { 
-    "allowRepeat": true, 
+    "allowRepeat": false,
     "currentUser": "Day1", 
-    "sessions": [ ], 
+    "sessions": [ "oneHitGoNoGo", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "oneHitGoNoGo"], 
     "settingsVersion": 1, 
     "users": [ 
         { 

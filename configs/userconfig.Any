@@ -19,7 +19,7 @@
             "mouseDPI": 800, 
             "mouseDegPerMillimeter": 2.82, 
             "reticleScale": [ 0.5, 0.5 ]
-        },  
+        }, 
         { 
             "id": "exampleDay1", 
             "mouseDPI": 800, 
