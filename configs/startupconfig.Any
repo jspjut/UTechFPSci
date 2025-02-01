@@ -1,5 +1,6 @@
 { 
     audioEnable = true;         // Set to true for release
+    experimentListEnable = true;  // Set to true for release
     developerMode = false;       // Set to false for release
     fullscreen = true;         // Set to true for release
     waypointEditorMode = false; // Set to false for release
