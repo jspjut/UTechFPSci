@@ -1,24 +1,16 @@
 { 
-    "allowRepeat": false,
-    "currentUser": "Day1", 
+    "allowRepeat": true, 
+    "currentUser": "ex_User1Day1", 
     "sessions": [ "oneHitGoNoGo", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "oneHitGoNoGo"], 
     "settingsVersion": 1, 
     "users": [ 
         { 
             "id": "anon", 
-            "sessions": [ "warmUpOneHitGoNoGo", "oneHitGoNoGo", "reaction", "oneHitCluster", "findTargets", "break", "blockBreak"]
-        }, 
-        { 
-            "id": "Day1", 
             "sessions": [ "oneHitGoNoGo", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "oneHitGoNoGo"]
         }, 
         { 
-            "id": "exampleDay1", 
-            "sessions": [ "oneHitGoNoGo", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "findTargets", "oneHitGoNoGo"]
-        }, 
-        { 
-            "id": "exampleDay1", 
-            "sessions": [ "oneHitGoNoGo", "findTargets"]
+            "id": "ex_User1Day1", 
+            "sessions": [ "oneHitGoNoGo", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "break", "findTargets", "findTargets", "blockBreak", "findTargets", "findTargets", "oneHitGoNoGo"]
         } ]
     
 } 

@@ -2,7 +2,7 @@
     description = "Utah Tech FPS Experiment 1"; 
     allowUserAdd = True;
     showMenuBetweenSessions: False;
-    // allowSessionChange: False;
+    allowSessionChange: False;
     sessionFeedbackDuration: 0;
     pretrialDuration = 0;
     referenceTargetSize = 0.05;

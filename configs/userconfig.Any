@@ -1,6 +1,6 @@
 { 
     "defaultUser": { 
-        "id": "anon", 
+        "id": "ex_User1Day1", 
         "mouseDPI": 800, 
         "mouseDegPerMillimeter": 2.824, 
         "reticleScale": [ 0.5, 0.5 ]
@@ -15,21 +15,9 @@
             "reticleScale": [ 0.5, 0.5 ]
         }, 
         { 
-            "id": "Day1", 
+            "id": "ex_User1Day1", 
             "mouseDPI": 800, 
             "mouseDegPerMillimeter": 2.82, 
-            "reticleScale": [ 0.5, 0.5 ]
-        }, 
-        { 
-            "id": "exampleDay1", 
-            "mouseDPI": 800, 
-            "mouseDegPerMillimeter": 2.82, 
-            "reticleScale": [ 0.5, 0.5 ]
-        }, 
-        { 
-            "id": "exampleDay2", 
-            "mouseDPI": 800, 
-            "mouseDegPerMillimeter": 2.824, 
             "reticleScale": [ 0.5, 0.5 ]
         } ]
     
